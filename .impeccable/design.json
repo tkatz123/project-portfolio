@@ -1,0 +1,188 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-04T00:00:00Z",
+  "title": "Design System: Tyler Katz — Portfolio",
+  "extensions": {
+    "colorMeta": {
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "#0a0a0c",
+        "tonalRamp": ["oklch(15% 0.005 285)", "oklch(25% 0.005 285)", "oklch(37% 0.005 285)", "oklch(49% 0.005 285)", "oklch(61% 0.005 285)", "oklch(73% 0.005 285)", "oklch(85% 0.005 285)", "oklch(95% 0.005 285)"]
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Surface",
+        "canonical": "#101014",
+        "tonalRamp": ["oklch(15% 0.008 280)", "oklch(25% 0.008 280)", "oklch(37% 0.008 280)", "oklch(49% 0.008 280)", "oklch(61% 0.008 280)", "oklch(73% 0.008 280)", "oklch(85% 0.008 280)", "oklch(95% 0.008 280)"]
+      },
+      "surface-2": {
+        "role": "neutral",
+        "displayName": "Surface 2",
+        "canonical": "#16161c",
+        "tonalRamp": ["oklch(15% 0.012 280)", "oklch(25% 0.012 280)", "oklch(37% 0.012 280)", "oklch(49% 0.012 280)", "oklch(61% 0.012 280)", "oklch(73% 0.012 280)", "oklch(85% 0.012 280)", "oklch(95% 0.012 280)"]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "rgba(245, 245, 242, 0.09)",
+        "tonalRamp": ["rgba(245,245,242,0.04)", "rgba(245,245,242,0.06)", "rgba(245,245,242,0.09)", "rgba(245,245,242,0.14)", "rgba(245,245,242,0.22)", "rgba(245,245,242,0.35)", "rgba(245,245,242,0.55)", "rgba(245,245,242,0.8)"]
+      },
+      "fg": {
+        "role": "neutral",
+        "displayName": "Off-White",
+        "canonical": "#f5f5f2",
+        "tonalRamp": ["oklch(15% 0.004 106)", "oklch(27% 0.004 106)", "oklch(39% 0.004 106)", "oklch(51% 0.004 106)", "oklch(63% 0.004 106)", "oklch(75% 0.004 106)", "oklch(87% 0.004 106)", "oklch(96.5% 0.004 106)"]
+      },
+      "fg-body": {
+        "role": "neutral",
+        "displayName": "Body Gray",
+        "canonical": "#a8a8b3",
+        "tonalRamp": ["oklch(15% 0.012 286)", "oklch(26% 0.012 286)", "oklch(38% 0.012 286)", "oklch(50% 0.012 286)", "oklch(62% 0.012 286)", "oklch(74% 0.012 286)", "oklch(86% 0.012 286)", "oklch(95% 0.012 286)"]
+      },
+      "fg-mute": {
+        "role": "neutral",
+        "displayName": "Mute Gray",
+        "canonical": "#82828f",
+        "tonalRamp": ["oklch(15% 0.015 286)", "oklch(26% 0.015 286)", "oklch(38% 0.015 286)", "oklch(50% 0.015 286)", "oklch(60% 0.015 286)", "oklch(72% 0.015 286)", "oklch(84% 0.015 286)", "oklch(94% 0.015 286)"]
+      },
+      "accent": {
+        "role": "primary",
+        "displayName": "Instrument Red",
+        "canonical": "#e5484d",
+        "tonalRamp": ["oklch(20% 0.09 22)", "oklch(30% 0.13 22)", "oklch(40% 0.16 22)", "oklch(50% 0.19 22)", "oklch(60% 0.2 22)", "oklch(70% 0.15 22)", "oklch(82% 0.09 22)", "oklch(93% 0.04 22)"]
+      },
+      "accent-soft": {
+        "role": "primary",
+        "displayName": "Red Wash",
+        "canonical": "rgba(229, 72, 77, 0.12)",
+        "tonalRamp": ["rgba(229,72,77,0.04)", "rgba(229,72,77,0.08)", "rgba(229,72,77,0.12)", "rgba(229,72,77,0.2)", "rgba(229,72,77,0.32)", "rgba(229,72,77,0.5)", "rgba(229,72,77,0.7)", "rgba(229,72,77,0.9)"]
+      },
+      "crimson": {
+        "role": "primary",
+        "displayName": "Deep Crimson",
+        "canonical": "#6e1b21",
+        "tonalRamp": ["oklch(16% 0.06 20)", "oklch(24% 0.09 20)", "oklch(32% 0.11 20)", "oklch(42% 0.13 20)", "oklch(52% 0.15 20)", "oklch(64% 0.13 20)", "oklch(78% 0.08 20)", "oklch(92% 0.04 20)"]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero name and detail-page titles. Archivo variable stretched to 125% width, -0.02em tracking, weight 900." },
+      "headline": { "displayName": "Headline", "purpose": "Section headings, always paired with a red mono numeral and a trailing hairline rule." },
+      "title": { "displayName": "Title", "purpose": "Card titles, sub-block headings, panel headings." },
+      "body": { "displayName": "Body", "purpose": "Paragraphs and descriptions in Hanken Grotesk; cards drop to 0.875rem." },
+      "label": { "displayName": "Label (Mono)", "purpose": "Numerals, pills, captions, metadata only — lowercase machine voice with red // and : separators. Never buttons or nav labels." }
+    },
+    "shadows": [],
+    "motion": [
+      { "name": "ease-out-expo", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Entrances and scroll reveals — fade + 24-28px rise." },
+      { "name": "duration-reveal", "value": "550ms", "purpose": "Scroll-reveal duration; hero entrance runs 700ms with 0.05-0.6s stagger." },
+      { "name": "duration-state", "value": "150ms-300ms", "purpose": "Hover/color/transform transitions on links, buttons, cards, nav." },
+      { "name": "duration-filter", "value": "250ms ease-out", "purpose": "Project-grid filter layout animation (scale 0.96 + fade)." },
+      { "name": "sweep-drift", "value": "26s ease-in-out infinite alternate", "purpose": "Hero crimson gradient drift; disabled under prefers-reduced-motion." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "lg", "value": "1024px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Solid red CTA with ink text; hover swaps the fill to off-white.",
+      "html": "<a class=\"ds-btn-primary\" href=\"#\">View Projects <svg viewBox=\"0 0 24 24\" width=\"16\" height=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M7 17 17 7\"/><path d=\"M9 7h8v8\"/></svg></a>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; gap: 8px; background: var(--color-accent, #e5484d); color: var(--color-ink, #0a0a0c); padding: 12px 24px; font-family: 'Hanken Grotesk', system-ui, sans-serif; font-size: 0.875rem; font-weight: 600; text-decoration: none; border: none; border-radius: 0; transition: background-color 150ms; } .ds-btn-primary:hover { background: var(--color-fg, #f5f5f2); } .ds-btn-primary:hover svg { transform: translate(2px, -2px); } .ds-btn-primary svg { transition: transform 150ms; } .ds-btn-primary:focus-visible { outline: 2px solid var(--color-accent, #e5484d); outline-offset: 3px; border-radius: 2px; }"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Hairline-bordered secondary action; hover moves border and text to red.",
+      "html": "<a class=\"ds-btn-ghost\" href=\"#\">Resume</a>",
+      "css": ".ds-btn-ghost { display: inline-flex; align-items: center; gap: 8px; background: transparent; color: var(--color-fg, #f5f5f2); border: 1px solid var(--color-line, rgba(245,245,242,0.09)); padding: 12px 24px; font-family: 'Hanken Grotesk', system-ui, sans-serif; font-size: 0.875rem; font-weight: 500; text-decoration: none; border-radius: 0; transition: color 150ms, border-color 150ms; } .ds-btn-ghost:hover { border-color: var(--color-accent, #e5484d); color: var(--color-accent, #e5484d); } .ds-btn-ghost:focus-visible { outline: 2px solid var(--color-accent, #e5484d); outline-offset: 3px; border-radius: 2px; }"
+    },
+    {
+      "name": "Filter Chip",
+      "kind": "chip",
+      "refersTo": "filter-chip",
+      "description": "Project category filter with mono count; active state fills solid red.",
+      "html": "<div style=\"display:flex; gap:8px;\"><button class=\"ds-chip ds-chip-active\" aria-pressed=\"true\">All <span class=\"ds-chip-count\">6</span></button><button class=\"ds-chip\" aria-pressed=\"false\">AI &amp; LLM <span class=\"ds-chip-count\">3</span></button></div>",
+      "css": ".ds-chip { background: transparent; border: 1px solid var(--color-line, rgba(245,245,242,0.09)); color: var(--color-fg-body, #a8a8b3); padding: 8px 16px; font-family: 'Hanken Grotesk', system-ui, sans-serif; font-size: 0.875rem; font-weight: 500; border-radius: 0; cursor: pointer; transition: color 150ms, border-color 150ms; } .ds-chip:hover { border-color: rgba(229,72,77,0.6); color: var(--color-fg, #f5f5f2); } .ds-chip-active, .ds-chip-active:hover { background: var(--color-accent, #e5484d); border-color: var(--color-accent, #e5484d); color: var(--color-ink, #0a0a0c); } .ds-chip-count { margin-left: 8px; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 0.75rem; color: var(--color-fg-mute, #82828f); } .ds-chip-active .ds-chip-count { color: rgba(10,10,12,0.6); } .ds-chip:focus-visible { outline: 2px solid var(--color-accent, #e5484d); outline-offset: 3px; border-radius: 2px; }"
+    },
+    {
+      "name": "Tag Pills",
+      "kind": "chip",
+      "refersTo": "tag-pill",
+      "description": "Mono tag row: neutral category pill first, red-washed tech pills after.",
+      "html": "<ul class=\"ds-tags\"><li class=\"ds-tag-neutral\">AI / LLM</li><li class=\"ds-tag\">LangGraph</li><li class=\"ds-tag\">RAG</li></ul>",
+      "css": ".ds-tags { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; margin: 0; padding: 0; } .ds-tags li { font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 11px; padding: 4px 10px; border-radius: 0; } .ds-tag { border: 1px solid rgba(229,72,77,0.25); background: rgba(229,72,77,0.12); color: var(--color-accent, #e5484d); } .ds-tag-neutral { border: 1px solid var(--color-line, rgba(245,245,242,0.09)); background: transparent; color: var(--color-fg-mute, #82828f); }"
+    },
+    {
+      "name": "Project Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Square case-study card: title + diagonal arrow, description, hairline-ruled mono outcome line, bottom-anchored tag row; hover lifts one tonal step.",
+      "html": "<a class=\"ds-card\" href=\"#\"><div class=\"ds-card-head\"><h3>Agentic Security Triage</h3><svg viewBox=\"0 0 24 24\" width=\"16\" height=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M7 17 17 7\"/><path d=\"M9 7h8v8\"/></svg></div><p class=\"ds-card-body\">A LangGraph agent pipeline that routes security alerts to the right runbook.</p><p class=\"ds-card-outcome\"><span>outcome:</span> cut mean triage time in half</p><ul class=\"ds-tags\"><li class=\"ds-tag-neutral\">AI / LLM</li><li class=\"ds-tag\">LangGraph</li></ul></a>",
+      "css": ".ds-card { display: flex; flex-direction: column; height: 100%; background: var(--color-surface, #101014); border: 1px solid var(--color-line, rgba(245,245,242,0.09)); border-radius: 0; padding: 24px; text-decoration: none; transition: transform 200ms, border-color 200ms, background-color 200ms; } .ds-card:hover { transform: translateY(-4px); border-color: rgba(229,72,77,0.6); background: var(--color-surface-2, #16161c); } .ds-card-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; } .ds-card-head h3 { font-family: Archivo, system-ui, sans-serif; font-stretch: 125%; letter-spacing: -0.02em; font-size: 1.125rem; font-weight: 700; line-height: 1.375; color: var(--color-fg, #f5f5f2); margin: 0; transition: color 200ms; } .ds-card:hover .ds-card-head h3 { color: var(--color-accent, #e5484d); } .ds-card-head svg { flex-shrink: 0; margin-top: 4px; color: var(--color-fg-mute, #82828f); transition: transform 200ms, color 200ms; } .ds-card:hover .ds-card-head svg { transform: translate(2px, -2px); color: var(--color-accent, #e5484d); } .ds-card-body { margin: 12px 0 0; font-family: 'Hanken Grotesk', system-ui, sans-serif; font-size: 0.875rem; line-height: 1.625; color: var(--color-fg-body, #a8a8b3); } .ds-card-outcome { margin: 16px 0 0; border-top: 1px solid var(--color-line, rgba(245,245,242,0.09)); padding-top: 16px; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 0.75rem; line-height: 1.625; color: var(--color-fg-mute, #82828f); } .ds-card-outcome span { color: var(--color-accent, #e5484d); } .ds-card .ds-tags { margin-top: auto; padding-top: 20px; list-style: none; display: flex; flex-wrap: wrap; gap: 8px; } .ds-card .ds-tags li { font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 11px; padding: 4px 10px; } .ds-card .ds-tag { border: 1px solid rgba(229,72,77,0.25); background: rgba(229,72,77,0.12); color: var(--color-accent, #e5484d); } .ds-card .ds-tag-neutral { border: 1px solid var(--color-line, rgba(245,245,242,0.09)); color: var(--color-fg-mute, #82828f); }"
+    },
+    {
+      "name": "Section Heading",
+      "kind": "custom",
+      "refersTo": "headline",
+      "description": "The signature: red mono numeral fused into the Archivo headline, trailing hairline rule.",
+      "html": "<div class=\"ds-section-heading\"><h2><span aria-hidden=\"true\">02.</span>Projects</h2><div class=\"ds-rule\" aria-hidden=\"true\"></div></div>",
+      "css": ".ds-section-heading { display: flex; align-items: center; gap: 16px; } .ds-section-heading h2 { display: flex; align-items: baseline; gap: 12px; font-family: Archivo, system-ui, sans-serif; font-stretch: 125%; letter-spacing: -0.02em; font-size: 1.5rem; font-weight: 700; color: var(--color-fg, #f5f5f2); margin: 0; } .ds-section-heading h2 span { font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 1rem; font-weight: 400; letter-spacing: 0; color: var(--color-accent, #e5484d); } .ds-rule { height: 1px; flex: 1; background: var(--color-line, rgba(245,245,242,0.09)); }"
+    },
+    {
+      "name": "Nav Entry",
+      "kind": "nav",
+      "refersTo": "label",
+      "description": "Numbered sticky-nav link: red mono numeral + body-face label; active reads off-white.",
+      "html": "<ul class=\"ds-nav\"><li><a href=\"#\" class=\"ds-nav-active\" aria-current=\"true\"><span>02.</span>Projects</a></li><li><a href=\"#\"><span>03.</span>Resume</a></li></ul>",
+      "css": ".ds-nav { display: flex; align-items: center; gap: 8px; list-style: none; margin: 0; padding: 0; } .ds-nav a { display: flex; align-items: baseline; gap: 6px; padding: 8px 12px; border-radius: 4px; font-family: 'Hanken Grotesk', system-ui, sans-serif; font-size: 0.875rem; color: var(--color-fg-mute, #82828f); text-decoration: none; transition: color 150ms; } .ds-nav a span { font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 11px; color: var(--color-fg-mute, #82828f); transition: color 150ms; } .ds-nav a:hover { color: var(--color-fg, #f5f5f2); } .ds-nav a:hover span { color: var(--color-accent, #e5484d); } .ds-nav-active, .ds-nav a.ds-nav-active { color: var(--color-fg, #f5f5f2); } .ds-nav-active span, .ds-nav a.ds-nav-active span { color: var(--color-accent, #e5484d); } .ds-nav a:focus-visible { outline: 2px solid var(--color-accent, #e5484d); outline-offset: 3px; }"
+    },
+    {
+      "name": "Accent Link",
+      "kind": "custom",
+      "refersTo": "accent",
+      "description": "Inline link: red text with a soft red underline that saturates on hover.",
+      "html": "<p class=\"ds-prose\">Read the <a class=\"ds-link-accent\" href=\"#\">case study</a> for details.</p>",
+      "css": ".ds-prose { font-family: 'Hanken Grotesk', system-ui, sans-serif; font-size: 1rem; line-height: 1.625; color: var(--color-fg-body, #a8a8b3); } .ds-link-accent { color: var(--color-accent, #e5484d); text-decoration: underline; text-decoration-color: rgba(229,72,77,0.35); text-underline-offset: 4px; transition: text-decoration-color 150ms ease-out; } .ds-link-accent:hover { text-decoration-color: var(--color-accent, #e5484d); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Dark Technical Document",
+    "overview": "The site renders an engineer's identity the way an engineering document renders a system: near-black ground, a faded blueprint grid, numbered sections, hairline rules, and exactly one instrument color — a precise red — used the way a red pen is used on a schematic. Density is calm and generous; nothing glows, nothing bounces, nothing is pastel. Depth of work is argued through structure (numerals, rules, mono metadata) rather than decoration.\n\nThe world explicitly refuses two clichés: the pastel template portfolio and the neon-glow dev page. There are no gradients-as-branding, no glassmorphism cards, no rounded-friendly shapes. Atmosphere exists in exactly one register — the hero's faded engineering grid with a slow crimson gradient drift — and the same grid frames the project detail pages so every surface stays inside the one world.",
+    "keyCharacteristics": [
+      "Near-black ground (#0a0a0c) with tonal surface layering, never shadows",
+      "One accent — red #e5484d — scoped to rules, numerals, pills, underlines, and the primary CTA",
+      "Square corners everywhere; hairline 1px borders carry all structure",
+      "Wide Archivo display (stretched to 125% width), Hanken Grotesk body, JetBrains Mono strictly for numerals/pills/metadata",
+      "Numbered sections (01–04) mirrored between the sticky nav and section headings — the page is its own table of contents"
+    ],
+    "rules": [
+      { "name": "The One Instrument Rule", "body": "Red is a marking tool, not a theme. It appears at hairline/numeral/pill scale and on at most one solid CTA per composition; it is never a heading color, a large text color, or a section background.", "section": "colors" },
+      { "name": "The Tonal Ladder Rule", "body": "Depth has exactly three rungs — ink → surface → surface-2 — climbed one step at a time (rest → hover). No fourth surface, no shadows, no overlays.", "section": "colors" },
+      { "name": "The Mono Scope Rule", "body": "JetBrains Mono is reserved for numerals, pills, tags, captions, and metadata. CTAs, buttons, and navigation labels use the body face in title case — a mono button is out of world.", "section": "typography" },
+      { "name": "The Lowercase Machine Rule", "body": "Mono metadata speaks in a lowercase terminal register with red // and : separators (ai/ml engineer in training // syracuse, ny, outcome:, 404 // page not found).", "section": "typography" },
+      { "name": "The Flat Document Rule", "body": "No box-shadows, no glows, no gradient fills on components. If an element needs to come forward, it gets a lighter surface, a red-tinted border, or a hairline — never a shadow.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do scope red to marks: numerals, pills, underlines, hairline dashes, dots, focus rings, and one solid CTA per composition.",
+      "Do climb the tonal ladder for depth — surface at rest, surface-2 + red-tinted hairline + -translate-y-1 on hover — and nothing else.",
+      "Do set all metadata in JetBrains Mono at 11–14px, lowercase, with red // or : separators.",
+      "Do number any new top-level section and register it in both the nav and its SectionHeading.",
+      "Do keep the faded hero-grid as the world frame on any new page-level surface (as the detail pages do), masked so it fades before content density rises.",
+      "Do respect prefers-reduced-motion and keep content visible without JS for every new animated element."
+    ],
+    "donts": [
+      "Don't use eyebrows or kickers above headings — this system refuses them; category labels live as neutral pills in tag rows.",
+      "Don't add box-shadows, glows, glass blur (outside the scrolled nav), or gradient-filled components.",
+      "Don't round corners on buttons, cards, pills, or images; the world is square.",
+      "Don't set CTAs, buttons, or nav labels in mono or uppercase — body face, title case.",
+      "Don't introduce a second accent hue or use Deep Crimson (#6e1b21) outside the hero/atmosphere gradients.",
+      "Don't darken text below Mute Gray (#82828f); it is the contrast floor (≥4.5:1 on ink and surface)."
+    ]
+  }
+}

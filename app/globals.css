@@ -1,0 +1,119 @@
+@import "tailwindcss";
+
+/*
+  Design tokens — the visual world.
+  Near-black ground, layered dark surfaces, gray→off-white text hierarchy,
+  red as a precise instrument (rules, numerals, pills, underlines).
+*/
+@theme {
+  --color-ink: #0a0a0c; /* page ground */
+  --color-surface: #101014; /* raised card ground */
+  --color-surface-2: #16161c; /* hover / second elevation */
+  --color-line: rgba(245, 245, 242, 0.09); /* hairline borders */
+  --color-fg: #f5f5f2; /* headings, primary text */
+  --color-fg-body: #a8a8b3; /* body text */
+  --color-fg-mute: #82828f; /* metadata, captions — ≥4.5:1 on ink and surface */
+  --color-accent: #e5484d; /* the red — links, markers, pills */
+  --color-accent-soft: rgba(229, 72, 77, 0.12);
+  --color-crimson: #6e1b21; /* deep crimson for gradient atmosphere */
+
+  --font-display: var(--font-archivo), system-ui, sans-serif;
+  --font-body: var(--font-hanken), system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem; /* clear the sticky nav on anchor jumps */
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background-color: var(--color-ink);
+  color: var(--color-fg-body);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: var(--color-ink);
+}
+
+/* Display face: Archivo variable, driven wide for confident headings. */
+.font-display {
+  font-family: var(--font-display);
+  font-stretch: 125%;
+  letter-spacing: -0.02em;
+}
+
+/* Accessible keyboard focus everywhere, in the accent voice. */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* ── Hero atmosphere: engineering grid + slow crimson sweep ──────────────── */
+
+.hero-grid {
+  background-image:
+    linear-gradient(to right, rgba(245, 245, 242, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(245, 245, 242, 0.05) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(
+    ellipse 90% 80% at 50% 40%,
+    black 30%,
+    transparent 72%
+  );
+}
+
+.hero-sweep {
+  background:
+    radial-gradient(
+      ellipse 640px 460px at 22% 30%,
+      rgba(110, 27, 33, 0.5),
+      transparent 68%
+    ),
+    radial-gradient(
+      ellipse 520px 420px at 78% 68%,
+      rgba(110, 27, 33, 0.32),
+      transparent 70%
+    );
+  animation: sweep-drift 26s ease-in-out infinite alternate;
+}
+
+@keyframes sweep-drift {
+  from {
+    transform: translate3d(-4%, -2%, 0) scale(1);
+    opacity: 0.85;
+  }
+  to {
+    transform: translate3d(4%, 3%, 0) scale(1.12);
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-sweep {
+    animation: none;
+  }
+}
+
+/* Red underline affordance for inline links. */
+.link-accent {
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-decoration-color: rgba(229, 72, 77, 0.35);
+  text-underline-offset: 4px;
+  transition: text-decoration-color 150ms ease-out;
+}
+
+.link-accent:hover {
+  text-decoration-color: var(--color-accent);
+}
