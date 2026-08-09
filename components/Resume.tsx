@@ -1,12 +1,29 @@
+"use client";
+
 import { resume, site } from "@/data/content";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Reveal } from "@/components/Reveal";
 import { DownloadIcon } from "@/components/icons";
 
+const RESUME_FILENAME = "Tyler_Katz_Resume.pdf";
+
 /**
  * Resume: a prominent download action with a compact highlights list beside it.
  */
 export function Resume() {
+  // Safari doesn't reliably honor <a download="...">, falling back to the
+  // served file's own name. Fetching as a blob forces the filename everywhere.
+  const handleDownload = async () => {
+    const response = await fetch(site.resumeUrl);
+    const blob = await response.blob();
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = RESUME_FILENAME;
+    link.click();
+    URL.revokeObjectURL(url);
+  };
+
   return (
     <section id="resume" className="mx-auto max-w-6xl scroll-mt-24 px-5 py-24 sm:px-8 sm:py-32">
       <SectionHeading>Resume</SectionHeading>
@@ -27,14 +44,14 @@ export function Resume() {
             </ul>
           </div>
 
-          <a
-            href={site.resumeUrl}
-            download="Tyler_Katz_Resume.pdf"
+          <button
+            type="button"
+            onClick={handleDownload}
             className="group inline-flex items-center justify-center gap-3 bg-accent px-8 py-4 text-sm font-semibold text-ink transition-colors hover:bg-fg"
           >
             <DownloadIcon className="h-4 w-4 transition-transform group-hover:translate-y-0.5" />
             Download Resume (PDF)
-          </a>
+          </button>
         </div>
       </Reveal>
     </section>
