@@ -3,8 +3,7 @@
  * SITE CONTENT — the single source of truth for every word on the site.
  *
  * To update the site, edit this file. Components never hard-code personal or
- * project text. Anything wrapped in [PLACEHOLDER: ...] is stub content waiting
- * for the real thing — search for "PLACEHOLDER" to find everything left to fill.
+ * project text.
  *
  * To add a project: append an entry to `projects` below. Its card and its
  * detail page at /projects/<slug> are generated automatically.

@@ -22,11 +22,9 @@ npm run dev        # http://localhost:3000
 - `projects` — every project card **and** its detail page
 - `contact` — the Contact section copy
 
-Anything wrapped in `[PLACEHOLDER: ...]` is stub content — search the file for `PLACEHOLDER` to find everything left to fill in.
-
 ### Replace the resume
 
-`public/resume.pdf` is a clearly-marked placeholder file. Drop your real resume over it (keep the name `resume.pdf`).
+`public/resume.pdf` is the file served by the download button. Drop a new resume over it (keep the name `resume.pdf`) — the button always saves it to the visitor's machine as `Tyler_Katz_Resume.pdf` regardless of the source filename (set in `components/Resume.tsx`).
 
 ### Replace the headshot
 
@@ -49,14 +47,17 @@ Append one entry to the `projects` array in `data/content.ts`:
     overview: "...",
     problem: "...",
     approach: "...",
-    architectureImage: "/diagrams/my-new-project.png", // file in /public, or null
+    architectureImage: "/diagrams/my-new-project.svg", // file in /public, or null
     architectureCaption: "One-line diagram caption.",
     results: "...",
+    resultCharts: [                  // optional — omit entirely if there are no charts
+      { src: "/charts/my-new-project/chart-1.png", caption: "...", width: 1800, height: 1500 },
+    ],
   },
 }
 ```
 
-That's it — the card, the filter counts, and the detail page are all generated from this entry. Put any architecture diagram image in `public/` and reference it by absolute path (`/...`).
+That's it — the card, the filter counts, and the detail page are all generated from this entry. Put any architecture diagram image in `public/` and reference it by absolute path (`/...`). If `resultCharts` is present, the Results section renders a click-to-enlarge gallery (`components/ChartGallery.tsx`) with keyboard and arrow navigation between images automatically.
 
 ## Deploy
 
