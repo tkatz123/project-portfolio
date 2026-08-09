@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" font-family="ui-monospace, 'SF Mono', 'JetBrains Mono', monospace">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#f5f5f2" />
+    </marker>
+    <marker id="arrow-accent" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#e5484d" />
+    </marker>
+  </defs>
+
+  <rect width="1200" height="675" fill="#0a0a0c" />
+
+  <!-- User Question -->
+  <rect x="60" y="50" width="220" height="56" fill="#101014" stroke="rgba(245,245,242,0.18)" stroke-width="1" />
+  <text x="170" y="83" text-anchor="middle" fill="#f5f5f2" font-size="17" font-weight="600">user question</text>
+
+  <!-- retrieve -->
+  <rect x="60" y="176" width="220" height="60" fill="#101014" stroke="rgba(245,245,242,0.18)" stroke-width="1" />
+  <text x="170" y="211" text-anchor="middle" fill="#f5f5f2" font-size="17" font-weight="600">retrieve</text>
+  <text x="170" y="230" text-anchor="middle" fill="#82828f" font-size="12">chroma · k=10</text>
+
+  <!-- grade_chunks -->
+  <rect x="60" y="306" width="220" height="60" fill="#101014" stroke="rgba(245,245,242,0.18)" stroke-width="1" />
+  <text x="170" y="336" text-anchor="middle" fill="#f5f5f2" font-size="17" font-weight="600">grade_chunks</text>
+  <text x="170" y="355" text-anchor="middle" fill="#82828f" font-size="12">gpt-4o-mini relevance check</text>
+
+  <!-- reformulate -->
+  <rect x="60" y="470" width="220" height="60" fill="#101014" stroke="rgba(229,72,77,0.4)" stroke-width="1" />
+  <text x="170" y="500" text-anchor="middle" fill="#f5f5f2" font-size="17" font-weight="600">reformulate</text>
+  <text x="170" y="519" text-anchor="middle" fill="#82828f" font-size="12">rewrites the query</text>
+
+  <!-- generate -->
+  <rect x="470" y="306" width="220" height="60" fill="#101014" stroke="rgba(245,245,242,0.18)" stroke-width="1" />
+  <text x="580" y="336" text-anchor="middle" fill="#f5f5f2" font-size="17" font-weight="600">generate</text>
+  <text x="580" y="355" text-anchor="middle" fill="#82828f" font-size="12">gpt-4o-mini + context</text>
+
+  <!-- Answer + Sources -->
+  <rect x="880" y="306" width="260" height="60" fill="#16161c" stroke="#e5484d" stroke-width="1" />
+  <text x="1010" y="331" text-anchor="middle" fill="#f5f5f2" font-size="16" font-weight="700">answer</text>
+  <text x="1010" y="352" text-anchor="middle" fill="#e5484d" font-size="12">+ source citations</text>
+
+  <!-- straight flow arrows -->
+  <line x1="170" y1="106" x2="170" y2="174" stroke="#f5f5f2" stroke-width="1.5" marker-end="url(#arrow)" />
+  <line x1="170" y1="236" x2="170" y2="304" stroke="#f5f5f2" stroke-width="1.5" marker-end="url(#arrow)" />
+  <line x1="690" y1="336" x2="878" y2="336" stroke="#f5f5f2" stroke-width="1.5" marker-end="url(#arrow)" />
+
+  <!-- relevant branch: grade_chunks -> generate -->
+  <path d="M280,326 C 380,326 380,336 468,336" fill="none" stroke="#f5f5f2" stroke-width="1.5" marker-end="url(#arrow)" />
+  <text x="330" y="312" fill="#82828f" font-size="12">relevant</text>
+
+  <!-- not relevant branch: grade_chunks -> reformulate -->
+  <path d="M170,366 C 170,410 170,440 170,468" fill="none" stroke="#e5484d" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#arrow-accent)" />
+  <text x="182" y="420" fill="#e5484d" font-size="12">not relevant</text>
+
+  <!-- retry loop: reformulate -> retrieve, capped at 2 -->
+  <path d="M58,500 C -30,500 -30,206 58,206" fill="none" stroke="#e5484d" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#arrow-accent)" />
+  <text x="14" y="360" fill="#e5484d" font-size="12" transform="rotate(-90 14 360)" text-anchor="middle">retry · capped at 2</text>
+
+  <!-- section label -->
+  <text x="60" y="620" fill="#82828f" font-size="13">4-node langgraph agent // agent/agent.py</text>
+  <text x="60" y="642" fill="#82828f" font-size="13">state: question · query · docs · relevant · answer · retries</text>
+</svg>

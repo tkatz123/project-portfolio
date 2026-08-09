@@ -63,7 +63,7 @@ export function Nav() {
           <span className="hidden sm:inline">{site.name}</span>
         </Link>
 
-        <ul className="flex items-center gap-1 overflow-x-auto sm:gap-2">
+        <ul className="flex items-center gap-1 sm:gap-3">
           {navSections.map((section) => {
             const isActive = active === section.id;
             return (
@@ -71,18 +71,13 @@ export function Nav() {
                 <a
                   href={`/#${section.id}`}
                   aria-current={isActive ? "true" : undefined}
-                  className={`group flex items-baseline gap-1.5 whitespace-nowrap rounded px-2 py-2 text-sm transition-colors sm:px-3 ${
-                    isActive ? "text-fg" : "text-fg-mute hover:text-fg"
+                  className={`font-display whitespace-nowrap rounded px-2 py-2 text-base font-bold underline-offset-[10px] transition-colors sm:px-3 ${
+                    isActive
+                      ? "text-fg underline decoration-accent decoration-2"
+                      : "text-fg-mute hover:text-fg"
                   }`}
                 >
-                  <span
-                    className={`hidden font-mono text-[11px] transition-colors sm:inline ${
-                      isActive ? "text-accent" : "text-fg-mute group-hover:text-accent"
-                    }`}
-                  >
-                    {section.number}.
-                  </span>
-                  <span>{section.label}</span>
+                  {section.label}
                 </a>
               </li>
             );

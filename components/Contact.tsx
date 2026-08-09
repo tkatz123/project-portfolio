@@ -34,7 +34,7 @@ export function Contact() {
 
   return (
     <section id="contact" className="mx-auto max-w-6xl scroll-mt-24 px-5 py-24 sm:px-8 sm:py-32">
-      <SectionHeading number="04">Contact</SectionHeading>
+      <SectionHeading>Contact</SectionHeading>
 
       <Reveal>
         <div className="mx-auto max-w-2xl text-center">

@@ -60,7 +60,7 @@ export function Projects() {
 
   return (
     <section id="projects" className="mx-auto max-w-6xl scroll-mt-24 px-5 py-24 sm:px-8 sm:py-32">
-      <SectionHeading number="02">Projects</SectionHeading>
+      <SectionHeading>Projects</SectionHeading>
 
       <div
         role="group"
@@ -108,11 +108,6 @@ export function Projects() {
           ))}
         </AnimatePresence>
       </motion.ul>
-
-      <p className="mt-10 font-mono text-xs text-fg-mute">
-        <span className="text-accent">note:</span> project details are placeholders while I write
-        up the real case studies — the structure is ready for them.
-      </p>
     </section>
   );
 }

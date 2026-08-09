@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" font-family="ui-monospace, 'SF Mono', 'JetBrains Mono', monospace">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#f5f5f2" />
+    </marker>
+    <marker id="arrow-mute" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#82828f" />
+    </marker>
+    <marker id="arrow-accent" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#e5484d" />
+    </marker>
+  </defs>
+
+  <rect width="1200" height="675" fill="#0a0a0c" />
+
+  <!-- Row labels -->
+  <text x="50" y="32" fill="#82828f" font-size="12" letter-spacing="1">offline — data &amp; training (one-time)</text>
+  <text x="115" y="202" fill="#82828f" font-size="12" letter-spacing="1">serve — runtime</text>
+  <text x="50" y="382" fill="#82828f" font-size="12" letter-spacing="1">ci/cd (github actions) → deploy (aws)</text>
+
+  <!-- ===== Row 1: OFFLINE, 6 boxes ===== -->
+  <!-- box template: x,170,60 at y=50 -->
+  <g font-size="14">
+    <rect x="50" y="50" width="170" height="60" fill="#101014" stroke="rgba(245,245,242,0.18)" />
+    <text x="135" y="76" text-anchor="middle" fill="#f5f5f2" font-weight="600">job postings</text>
+    <text x="135" y="95" text-anchor="middle" fill="#82828f" font-size="11">raw corpus</text>
+
+    <rect x="236" y="50" width="170" height="60" fill="#101014" stroke="rgba(245,245,242,0.18)" />
+    <text x="321" y="76" text-anchor="middle" fill="#f5f5f2" font-weight="600">claude — teacher</text>
+    <text x="321" y="95" text-anchor="middle" fill="#82828f" font-size="11">bootstrap labels</text>
+
+    <rect x="422" y="50" width="170" height="60" fill="#101014" stroke="rgba(245,245,242,0.18)" />
+    <text x="507" y="76" text-anchor="middle" fill="#f5f5f2" font-weight="600">pydantic splits</text>
+    <text x="507" y="95" text-anchor="middle" fill="#82828f" font-size="11">train / val / test</text>
+
+    <rect x="608" y="50" width="170" height="60" fill="#101014" stroke="rgba(245,245,242,0.18)" />
+    <text x="693" y="76" text-anchor="middle" fill="#f5f5f2" font-weight="600">qlora fine-tune</text>
+    <text x="693" y="95" text-anchor="middle" fill="#82828f" font-size="11">qwen2.5-3b · 4-bit</text>
+
+    <rect x="794" y="50" width="170" height="60" fill="#101014" stroke="rgba(245,245,242,0.18)" />
+    <text x="879" y="76" text-anchor="middle" fill="#f5f5f2" font-weight="600">merge + quantize</text>
+    <text x="879" y="95" text-anchor="middle" fill="#82828f" font-size="11">q4_k_m gguf</text>
+
+    <rect x="980" y="50" width="170" height="60" fill="#16161c" stroke="#e5484d" />
+    <text x="1065" y="76" text-anchor="middle" fill="#f5f5f2" font-weight="700">hf hub</text>
+    <text x="1065" y="95" text-anchor="middle" fill="#e5484d" font-size="11">model artifacts</text>
+  </g>
+
+  <line x1="220" y1="80" x2="234" y2="80" stroke="#f5f5f2" stroke-width="1.5" marker-end="url(#arrow)" />
+  <line x1="406" y1="80" x2="420" y2="80" stroke="#f5f5f2" stroke-width="1.5" marker-end="url(#arrow)" />
+  <line x1="592" y1="80" x2="606" y2="80" stroke="#f5f5f2" stroke-width="1.5" marker-end="url(#arrow)" />
+  <line x1="778" y1="80" x2="792" y2="80" stroke="#f5f5f2" stroke-width="1.5" marker-end="url(#arrow)" />
+  <line x1="964" y1="80" x2="978" y2="80" stroke="#f5f5f2" stroke-width="1.5" marker-end="url(#arrow)" />
+
+  <!-- ===== Row 2: SERVE, 4 boxes ===== -->
+  <g font-size="14">
+    <rect x="115" y="220" width="220" height="66" fill="#101014" stroke="rgba(245,245,242,0.18)" />
+    <text x="225" y="248" text-anchor="middle" fill="#f5f5f2" font-weight="600">client</text>
+    <text x="225" y="267" text-anchor="middle" fill="#82828f" font-size="11">POST /extract</text>
+
+    <rect x="365" y="220" width="220" height="66" fill="#101014" stroke="rgba(245,245,242,0.18)" />
+    <text x="475" y="248" text-anchor="middle" fill="#f5f5f2" font-weight="600">fastapi</text>
+    <text x="475" y="267" text-anchor="middle" fill="#82828f" font-size="11">+ latency middleware</text>
+
+    <rect x="615" y="220" width="220" height="66" fill="#101014" stroke="rgba(245,245,242,0.18)" />
+    <text x="725" y="248" text-anchor="middle" fill="#f5f5f2" font-weight="600">llama-cpp-python</text>
+    <text x="725" y="267" text-anchor="middle" fill="#82828f" font-size="11">cpu inference</text>
+
+    <rect x="865" y="220" width="220" height="66" fill="#16161c" stroke="#e5484d" />
+    <text x="975" y="248" text-anchor="middle" fill="#f5f5f2" font-weight="700">response</text>
+    <text x="975" y="267" text-anchor="middle" fill="#e5484d" font-size="11">validated json</text>
+  </g>
+
+  <line x1="335" y1="253" x2="363" y2="253" stroke="#f5f5f2" stroke-width="1.5" marker-end="url(#arrow)" />
+  <line x1="585" y1="253" x2="613" y2="253" stroke="#f5f5f2" stroke-width="1.5" marker-end="url(#arrow)" />
+  <line x1="835" y1="253" x2="863" y2="253" stroke="#f5f5f2" stroke-width="1.5" marker-end="url(#arrow)" />
+
+  <!-- ===== Row 3: CI/CD + DEPLOY, 6 boxes ===== -->
+  <g font-size="14">
+    <rect x="50" y="400" width="170" height="60" fill="#101014" stroke="rgba(245,245,242,0.18)" />
+    <text x="135" y="426" text-anchor="middle" fill="#f5f5f2" font-weight="600">git push</text>
+    <text x="135" y="445" text-anchor="middle" fill="#82828f" font-size="11">on every commit</text>
+
+    <rect x="236" y="400" width="170" height="60" fill="#101014" stroke="rgba(245,245,242,0.18)" />
+    <text x="321" y="426" text-anchor="middle" fill="#f5f5f2" font-weight="600">pytest</text>
+    <text x="321" y="445" text-anchor="middle" fill="#82828f" font-size="11">green gate</text>
+
+    <rect x="422" y="400" width="170" height="60" fill="#101014" stroke="rgba(245,245,242,0.18)" />
+    <text x="507" y="426" text-anchor="middle" fill="#f5f5f2" font-weight="600">build image</text>
+    <text x="507" y="445" text-anchor="middle" fill="#82828f" font-size="11">arm64</text>
+
+    <rect x="608" y="400" width="170" height="60" fill="#101014" stroke="rgba(245,245,242,0.18)" />
+    <text x="693" y="426" text-anchor="middle" fill="#f5f5f2" font-weight="600">docker hub</text>
+    <text x="693" y="445" text-anchor="middle" fill="#82828f" font-size="11">image registry</text>
+
+    <rect x="794" y="400" width="170" height="60" fill="#101014" stroke="rgba(245,245,242,0.18)" />
+    <text x="879" y="426" text-anchor="middle" fill="#f5f5f2" font-weight="600">ec2 graviton</text>
+    <text x="879" y="445" text-anchor="middle" fill="#82828f" font-size="11">docker run</text>
+
+    <rect x="980" y="400" width="170" height="60" fill="#16161c" stroke="#e5484d" />
+    <text x="1065" y="426" text-anchor="middle" fill="#f5f5f2" font-weight="700">public endpoint</text>
+    <text x="1065" y="445" text-anchor="middle" fill="#e5484d" font-size="11">/extract · /health</text>
+  </g>
+
+  <line x1="220" y1="430" x2="234" y2="430" stroke="#f5f5f2" stroke-width="1.5" marker-end="url(#arrow)" />
+  <line x1="406" y1="430" x2="420" y2="430" stroke="#f5f5f2" stroke-width="1.5" marker-end="url(#arrow)" />
+  <line x1="592" y1="430" x2="606" y2="430" stroke="#f5f5f2" stroke-width="1.5" marker-end="url(#arrow)" />
+  <line x1="778" y1="430" x2="792" y2="430" stroke="#f5f5f2" stroke-width="1.5" marker-end="url(#arrow)" />
+  <line x1="964" y1="430" x2="978" y2="430" stroke="#f5f5f2" stroke-width="1.5" marker-end="url(#arrow)" />
+
+  <!-- cross-lane connectors -->
+  <path d="M1065,110 C 1065,160 900,170 725,218" fill="none" stroke="#82828f" stroke-width="1.3" stroke-dasharray="4 4" marker-end="url(#arrow-mute)" />
+  <text x="900" y="165" fill="#82828f" font-size="11">pulled at startup</text>
+
+  <path d="M879,398 C 879,340 620,320 475,288" fill="none" stroke="#e5484d" stroke-width="1.3" stroke-dasharray="4 4" marker-end="url(#arrow-accent)" />
+  <text x="640" y="335" fill="#e5484d" font-size="11">runs the api</text>
+
+  <!-- footer -->
+  <text x="50" y="580" fill="#82828f" font-size="13">fine-tune: qlora (4-bit nf4 + lora r=16) on qwen2.5-3b-instruct</text>
+  <text x="50" y="602" fill="#82828f" font-size="13">headline metric: student − baseline, scored via disable_adapter() in the same run</text>
+</svg>

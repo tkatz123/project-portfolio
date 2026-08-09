@@ -38,7 +38,7 @@ export function Hero() {
           {...enter(0.05)}
           className="mb-5 font-mono text-sm text-accent sm:text-base"
         >
-          {site.role.toLowerCase()} <span className="text-fg-mute">// syracuse, ny</span>
+          {site.role}
         </motion.p>
 
         <motion.h1
@@ -52,12 +52,12 @@ export function Hero() {
 
         <motion.p
           {...enter(0.3)}
-          className="mt-7 max-w-xl text-lg leading-relaxed text-fg-body sm:text-xl"
+          className="mt-6 max-w-xl text-lg leading-relaxed text-fg-body sm:text-xl"
         >
           {site.tagline}
         </motion.p>
 
-        <motion.div {...enter(0.45)} className="mt-10 flex flex-wrap items-center gap-4">
+        <motion.div {...enter(0.45)} className="mt-8 flex flex-wrap items-center gap-4">
           <a
             href="/#projects"
             className="group inline-flex items-center gap-2 bg-accent px-6 py-3 text-sm font-semibold text-ink transition-colors hover:bg-fg"
@@ -73,7 +73,7 @@ export function Hero() {
           </a>
         </motion.div>
 
-        <motion.ul {...enter(0.6)} className="mt-14 flex items-center gap-5">
+        <motion.ul {...enter(0.6)} className="mt-10 flex items-center gap-6">
           {socials.map(({ label, href, Icon }) => (
             <li key={label}>
               <a
@@ -83,12 +83,10 @@ export function Hero() {
                 aria-label={label}
                 className="block text-fg-mute transition-colors hover:text-accent"
               >
-                <Icon className="h-5 w-5" />
+                <Icon className="h-6 w-6" />
               </a>
             </li>
           ))}
-          <li aria-hidden="true" className="h-px w-24 bg-line" />
-          <li className="font-mono text-xs text-fg-mute">{site.email}</li>
         </motion.ul>
       </div>
     </section>

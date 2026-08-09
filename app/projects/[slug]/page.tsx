@@ -4,6 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { projects, site } from "@/data/content";
 import { Footer } from "@/components/Footer";
+import { ChartGallery } from "@/components/ChartGallery";
 import {
   ArrowLeftIcon,
   ArrowUpRightIcon,
@@ -36,22 +37,15 @@ const categoryLabel = {
 } as const;
 
 function DetailSection({
-  number,
   title,
   children,
 }: {
-  number: string;
   title: string;
   children: React.ReactNode;
 }) {
   return (
     <section className="border-t border-line py-10 sm:py-12">
-      <h2 className="font-display flex items-baseline gap-3 text-xl font-bold text-fg sm:text-2xl">
-        <span aria-hidden="true" className="font-mono text-sm font-normal text-accent">
-          {number}
-        </span>
-        {title}
-      </h2>
+      <h2 className="font-display text-xl font-bold text-fg sm:text-2xl">{title}</h2>
       <div className="mt-5 max-w-3xl text-base leading-relaxed sm:text-lg">{children}</div>
     </section>
   );
@@ -123,19 +117,19 @@ export default async function ProjectPage({
         </div>
 
         <div className="mt-12 space-y-0">
-          <DetailSection number="/01" title="Overview">
+          <DetailSection title="Overview">
             <p>{project.detail.overview}</p>
           </DetailSection>
 
-          <DetailSection number="/02" title="Problem">
+          <DetailSection title="Problem">
             <p>{project.detail.problem}</p>
           </DetailSection>
 
-          <DetailSection number="/03" title="Approach">
+          <DetailSection title="Approach">
             <p>{project.detail.approach}</p>
           </DetailSection>
 
-          <DetailSection number="/04" title="Architecture">
+          <DetailSection title="Architecture">
             {project.detail.architectureImage ? (
               <figure>
                 <Image
@@ -160,14 +154,17 @@ export default async function ProjectPage({
             )}
           </DetailSection>
 
-          <DetailSection number="/05" title="Results & Outcome">
+          <DetailSection title="Results & Outcome">
             <p>{project.detail.results}</p>
             <p className="mt-4 border-l border-accent pl-4 font-mono text-sm text-fg-mute">
               <span className="text-accent">outcome:</span> {project.outcome}
             </p>
+            {project.detail.resultCharts && (
+              <ChartGallery charts={project.detail.resultCharts} />
+            )}
           </DetailSection>
 
-          <DetailSection number="/06" title="Tech Stack">
+          <DetailSection title="Tech Stack">
             <ul className="flex flex-wrap gap-2">
               {project.tech.map((tech) => (
                 <li

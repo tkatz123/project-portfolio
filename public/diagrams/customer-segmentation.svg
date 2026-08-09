@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" font-family="ui-monospace, 'SF Mono', 'JetBrains Mono', monospace">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#f5f5f2" />
+    </marker>
+  </defs>
+
+  <rect width="1200" height="675" fill="#0a0a0c" />
+
+  <g font-size="15">
+    <!-- Row 1: source -->
+    <rect x="440" y="40" width="320" height="50" fill="#101014" stroke="rgba(245,245,242,0.18)" />
+    <text x="600" y="70" text-anchor="middle" fill="#f5f5f2" font-weight="600">marketing_campaign.csv</text>
+
+    <!-- Row 2: preprocessing -->
+    <rect x="440" y="112" width="320" height="56" fill="#101014" stroke="rgba(245,245,242,0.18)" />
+    <text x="600" y="135" text-anchor="middle" fill="#f5f5f2" font-weight="600">preprocessing</text>
+    <text x="600" y="154" text-anchor="middle" fill="#82828f" font-size="12">clean nulls + feature engineering</text>
+
+    <!-- Row 3: EDA -->
+    <rect x="440" y="198" width="320" height="56" fill="#101014" stroke="rgba(245,245,242,0.18)" />
+    <text x="600" y="221" text-anchor="middle" fill="#f5f5f2" font-weight="600">eda</text>
+    <text x="600" y="240" text-anchor="middle" fill="#82828f" font-size="12">spark sql + pandas/matplotlib</text>
+
+    <!-- Row 4: Spark ML pipeline -->
+    <rect x="380" y="284" width="440" height="56" fill="#101014" stroke="rgba(245,245,242,0.18)" />
+    <text x="600" y="307" text-anchor="middle" fill="#f5f5f2" font-weight="600">spark ml pipeline</text>
+    <text x="600" y="326" text-anchor="middle" fill="#82828f" font-size="12">vectorassembler → scaler → encoder</text>
+
+    <!-- Row 5: K-Means (highlighted decision) -->
+    <rect x="380" y="370" width="440" height="56" fill="#16161c" stroke="#e5484d" />
+    <text x="600" y="393" text-anchor="middle" fill="#f5f5f2" font-weight="700">k-means · k = 3</text>
+    <text x="600" y="412" text-anchor="middle" fill="#e5484d" font-size="12">elbow + silhouette + pca → silhouette 0.3136</text>
+
+    <!-- Row 6: Cluster profiling -->
+    <rect x="380" y="456" width="440" height="56" fill="#101014" stroke="rgba(245,245,242,0.18)" />
+    <text x="600" y="479" text-anchor="middle" fill="#f5f5f2" font-weight="600">cluster profiling</text>
+    <text x="600" y="498" text-anchor="middle" fill="#82828f" font-size="12">income · age · spend · channel · deals</text>
+
+    <!-- Row 7: three recommendation engines -->
+    <rect x="170" y="542" width="260" height="60" fill="#16161c" stroke="rgba(245,245,242,0.22)" />
+    <text x="300" y="567" text-anchor="middle" fill="#f5f5f2" font-weight="600">fp-growth</text>
+    <text x="300" y="588" text-anchor="middle" fill="#82828f" font-size="12">association rules · inventory</text>
+
+    <rect x="470" y="542" width="260" height="60" fill="#16161c" stroke="rgba(245,245,242,0.22)" />
+    <text x="600" y="567" text-anchor="middle" fill="#f5f5f2" font-weight="600">hybrid recommender</text>
+    <text x="600" y="588" text-anchor="middle" fill="#82828f" font-size="12">cluster + individual history</text>
+
+    <rect x="770" y="542" width="260" height="60" fill="#16161c" stroke="rgba(245,245,242,0.22)" />
+    <text x="900" y="567" text-anchor="middle" fill="#f5f5f2" font-weight="600">deal matching</text>
+    <text x="900" y="588" text-anchor="middle" fill="#82828f" font-size="12">persona-driven offers</text>
+  </g>
+
+  <!-- straight vertical chain -->
+  <line x1="600" y1="90" x2="600" y2="110" stroke="#f5f5f2" stroke-width="1.5" marker-end="url(#arrow)" />
+  <line x1="600" y1="168" x2="600" y2="196" stroke="#f5f5f2" stroke-width="1.5" marker-end="url(#arrow)" />
+  <line x1="600" y1="254" x2="600" y2="282" stroke="#f5f5f2" stroke-width="1.5" marker-end="url(#arrow)" />
+  <line x1="600" y1="340" x2="600" y2="368" stroke="#f5f5f2" stroke-width="1.5" marker-end="url(#arrow)" />
+  <line x1="600" y1="426" x2="600" y2="454" stroke="#f5f5f2" stroke-width="1.5" marker-end="url(#arrow)" />
+
+  <!-- fan-out into three engines -->
+  <path d="M480,512 C 400,525 340,532 300,540" fill="none" stroke="#f5f5f2" stroke-width="1.5" marker-end="url(#arrow)" />
+  <path d="M600,512 C 600,522 600,530 600,540" fill="none" stroke="#f5f5f2" stroke-width="1.5" marker-end="url(#arrow)" />
+  <path d="M720,512 C 800,525 860,532 900,540" fill="none" stroke="#f5f5f2" stroke-width="1.5" marker-end="url(#arrow)" />
+
+  <!-- footer -->
+  <text x="60" y="628" fill="#82828f" font-size="13">3 clusters: balanced mid-spenders · budget-conscious deal seekers · affluent digital loyalists</text>
+  <text x="60" y="650" fill="#82828f" font-size="13">fp-growth confidence: 0.80–1.0 — wine and meat drive co-purchase across all clusters</text>
+</svg>

@@ -9,7 +9,7 @@ import { DownloadIcon } from "@/components/icons";
 export function Resume() {
   return (
     <section id="resume" className="mx-auto max-w-6xl scroll-mt-24 px-5 py-24 sm:px-8 sm:py-32">
-      <SectionHeading number="03">Resume</SectionHeading>
+      <SectionHeading>Resume</SectionHeading>
 
       <Reveal>
         <div className="grid gap-10 border border-line bg-surface p-8 sm:p-12 lg:grid-cols-[1fr_auto] lg:items-center lg:gap-16">

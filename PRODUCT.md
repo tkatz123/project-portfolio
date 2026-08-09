@@ -23,7 +23,7 @@ Current phase: build the **full structure only**. All project content and bullet
 
 ## Positioning
 
-An AI/ML engineer in training with real production-adjacent experience unusual for a graduate student: LangGraph agents, RAG, and LLM fine-tuning (LoRA/QLoRA) shipped inside Comcast's cybersecurity organization (CSRE / TPX Security Solutions Engineering), plus engineering leadership of Cuse AI, Syracuse's campus AI/ML organization. The site's claim is depth of applied AI engineering work, evidenced by project detail pages — not a résumé rehash.
+An AI/ML engineer in training with real production-adjacent experience unusual for a graduate student: LangGraph agents, RAG, and LLM fine-tuning (LoRA/QLoRA) shipped inside Comcast's cybersecurity organization (CSRE / TPX Security Solutions Engineering), plus engineering leadership of United AI, Syracuse's campus AI/ML organization. The site's claim is depth of applied AI engineering work, evidenced by project detail pages — not a résumé rehash.
 
 ## Operating Context
 
@@ -31,7 +31,7 @@ An AI/ML engineer in training with real production-adjacent experience unusual f
 - Single-page site with smooth-scroll anchor navigation (Hero → About → Projects → Resume → Contact → Footer) plus individual project detail pages at `/projects/[slug]`.
 - Sections and structure (confirmed):
   - **Hero:** name, tagline positioning Tyler as an AI/ML engineer in training, GitHub / LinkedIn / email links, CTAs to Projects and Resume.
-  - **About:** four sub-blocks — About Me (2–3 editable personable paragraphs); Education timeline (Syracuse M.S. Applied Human Centered AI, in progress; Syracuse B.S. Applied Data Analytics, iSchool, 2026); Skills grouped as Languages (Python, R, SQL), ML & Data Science (scikit-learn, pandas, NumPy, matplotlib, PySpark), AI/LLM Engineering (LangGraph, RAG, agents, LoRA/QLoRA fine-tuning, prompt engineering), Engineering & Cloud (FastAPI, Docker, AWS EKS, GitHub Actions CI/CD, Streamlit, Shiny); Experience (Data Science Intern — Comcast CSRE, TPX Security Solutions Engineering, 2026; Engineering Lead — Cuse AI; Treasurer — Zeta Beta Tau Fraternity, Omicron Chapter) with short placeholder bullets.
+  - **About:** four sub-blocks — About Me (2–3 editable personable paragraphs); Education timeline (Syracuse M.S. Applied Human Centered AI, in progress; Syracuse B.S. Applied Data Analytics, iSchool, 2026); Skills grouped as Languages (Python, R, SQL), ML & Data Science (scikit-learn, pandas, NumPy, matplotlib, PySpark), AI/LLM Engineering (LangGraph, RAG, agents, LoRA/QLoRA fine-tuning, prompt engineering), Engineering & Cloud (FastAPI, Docker, AWS EKS, GitHub Actions CI/CD, Streamlit, Shiny); Experience (Data Science Intern — Comcast CSRE, TPX Security Solutions Engineering, 2026; Engineering Lead — United AI; Treasurer — Zeta Beta Tau Fraternity, Omicron Chapter) with short placeholder bullets.
   - **Projects:** two categories, each a card grid — AI / LLM Projects (3 placeholder cards) and Classical ML / Data Science Projects (3 placeholder cards). Filter buttons: All / AI & LLM / Classical ML & DS. Cards link to detail pages built from one reusable template with sections: Overview, Problem, Approach, Architecture (image placeholder), Results/Outcome, Tech Stack, GitHub / Live Demo links.
   - **Resume:** prominent "Download Resume (PDF)" button linking to `/resume.pdf`, plus brief highlights list.
   - **Contact:** friendly invitation; email click-to-copy, GitHub and LinkedIn buttons. Static only — no backend, no contact form.

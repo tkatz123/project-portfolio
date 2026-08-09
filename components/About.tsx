@@ -10,7 +10,7 @@ import { Reveal } from "@/components/Reveal";
 export function About() {
   return (
     <section id="about" className="mx-auto max-w-6xl scroll-mt-24 px-5 py-24 sm:px-8 sm:py-32">
-      <SectionHeading number="01">About</SectionHeading>
+      <SectionHeading>About</SectionHeading>
 
       {/* Bio + headshot */}
       <div className="grid gap-12 lg:grid-cols-[1fr_320px] lg:gap-16">
@@ -24,20 +24,19 @@ export function About() {
 
         <Reveal delay={0.1}>
           <figure className="group relative mx-auto w-64 lg:w-full">
-            <div
-              aria-hidden="true"
-              className="absolute inset-0 translate-x-3 translate-y-3 border border-accent/50 transition-transform duration-300 group-hover:translate-x-2 group-hover:translate-y-2"
-            />
-            <Image
-              src={site.headshot}
-              alt={`Portrait of ${site.name}`}
-              width={641}
-              height={489}
-              className="relative aspect-[4/3] w-full border border-line object-cover grayscale transition-[filter] duration-300 group-hover:grayscale-0"
-            />
-            <figcaption className="mt-3 font-mono text-xs text-fg-mute">
-              tyler_katz.png <span className="text-accent">// syracuse university</span>
-            </figcaption>
+            <div className="relative">
+              <div
+                aria-hidden="true"
+                className="absolute inset-0 translate-x-3 translate-y-3 border border-accent/50 transition-transform duration-300 group-hover:translate-x-2 group-hover:translate-y-2"
+              />
+              <Image
+                src={site.headshot}
+                alt={`Portrait of ${site.name}`}
+                width={641}
+                height={489}
+                className="relative aspect-[4/3] w-full border border-line object-cover grayscale transition-[filter] duration-300 group-hover:grayscale-0"
+              />
+            </div>
           </figure>
         </Reveal>
       </div>
@@ -50,8 +49,8 @@ export function About() {
             <li key={entry.degree} className="relative">
               <span
                 aria-hidden="true"
-                className={`absolute -left-[27.5px] top-1.5 h-2.5 w-2.5 rounded-full sm:-top-[37px] sm:left-0 ${
-                  entry.status === "current" ? "bg-accent" : "border border-accent bg-ink"
+                className={`absolute -left-[30px] top-1 h-3 w-3 rounded-full sm:-top-[39px] sm:left-[-2.5px] ${
+                  entry.dot === "filled" ? "bg-accent" : "border-2 border-accent bg-ink"
                 }`}
               />
               <p className="font-mono text-xs text-accent">{entry.period}</p>

@@ -59,6 +59,15 @@ export function ArrowLeftIcon({ className }: IconProps) {
   );
 }
 
+export function ArrowRightIcon({ className }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} {...stroke} aria-hidden="true">
+      <path d="M5 12h14" />
+      <path d="m13 6 6 6-6 6" />
+    </svg>
+  );
+}
+
 export function CopyIcon({ className }: IconProps) {
   return (
     <svg viewBox="0 0 24 24" className={className} {...stroke} aria-hidden="true">
@@ -82,6 +91,15 @@ export function DownloadIcon({ className }: IconProps) {
       <path d="M12 3v12" />
       <path d="m7 10 5 5 5-5" />
       <path d="M4 19h16" />
+    </svg>
+  );
+}
+
+export function CloseIcon({ className }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} {...stroke} aria-hidden="true">
+      <path d="M6 6l12 12" />
+      <path d="M18 6 6 18" />
     </svg>
   );
 }
