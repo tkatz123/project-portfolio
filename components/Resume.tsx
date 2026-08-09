@@ -29,7 +29,7 @@ export function Resume() {
 
           <a
             href={site.resumeUrl}
-            download
+            download="Tyler_Katz_Resume.pdf"
             className="group inline-flex items-center justify-center gap-3 bg-accent px-8 py-4 text-sm font-semibold text-ink transition-colors hover:bg-fg"
           >
             <DownloadIcon className="h-4 w-4 transition-transform group-hover:translate-y-0.5" />
