@@ -6,11 +6,12 @@ import { navSections, site } from "@/data/content";
 
 /**
  * Sticky numbered navigation. Tracks the section currently in view and
- * highlights its entry; collapses to a horizontal scroll strip on mobile.
+ * highlights its entry; collapses to a hamburger menu on mobile.
  */
 export function Nav() {
   const [active, setActive] = useState<string>("");
   const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -18,6 +19,20 @@ export function Nav() {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  // Lock body scroll while the mobile menu is open, and let Escape close it.
+  useEffect(() => {
+    if (!menuOpen) return;
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setMenuOpen(false);
+    };
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", onKeyDown);
+    return () => {
+      document.body.style.overflow = "";
+      window.removeEventListener("keydown", onKeyDown);
+    };
+  }, [menuOpen]);
 
   useEffect(() => {
     const visible = new Set<string>();
@@ -63,7 +78,7 @@ export function Nav() {
           <span className="hidden sm:inline">{site.name}</span>
         </Link>
 
-        <ul className="flex items-center gap-1 sm:gap-3">
+        <ul className="hidden items-center gap-1 sm:flex sm:gap-3">
           {navSections.map((section) => {
             const isActive = active === section.id;
             return (
@@ -83,7 +98,61 @@ export function Nav() {
             );
           })}
         </ul>
+
+        <button
+          type="button"
+          aria-label={menuOpen ? "Close menu" : "Open menu"}
+          aria-expanded={menuOpen}
+          aria-controls="mobile-nav-menu"
+          onClick={() => setMenuOpen((open) => !open)}
+          className="flex h-10 w-10 items-center justify-center rounded text-fg transition-colors hover:text-accent sm:hidden"
+        >
+          <span className="relative block h-4 w-5">
+            <span
+              className={`absolute left-0 top-0 block h-0.5 w-5 bg-current transition-transform duration-200 ${
+                menuOpen ? "translate-y-[7px] rotate-45" : ""
+              }`}
+            />
+            <span
+              className={`absolute left-0 top-[7px] block h-0.5 w-5 bg-current transition-opacity duration-200 ${
+                menuOpen ? "opacity-0" : "opacity-100"
+              }`}
+            />
+            <span
+              className={`absolute left-0 top-[14px] block h-0.5 w-5 bg-current transition-transform duration-200 ${
+                menuOpen ? "-translate-y-[7px] -rotate-45" : ""
+              }`}
+            />
+          </span>
+        </button>
       </nav>
+
+      {menuOpen && (
+        <ul
+          id="mobile-nav-menu"
+          className="flex flex-col gap-1 border-t border-line bg-ink/95 px-5 py-3 backdrop-blur-md sm:hidden"
+        >
+          {navSections.map((section) => {
+            const isActive = active === section.id;
+            return (
+              <li key={section.id}>
+                <a
+                  href={`/#${section.id}`}
+                  aria-current={isActive ? "true" : undefined}
+                  onClick={() => setMenuOpen(false)}
+                  className={`font-display block rounded px-2 py-3 text-base font-bold underline-offset-[10px] transition-colors ${
+                    isActive
+                      ? "text-fg underline decoration-accent decoration-2"
+                      : "text-fg-mute hover:text-fg"
+                  }`}
+                >
+                  {section.label}
+                </a>
+              </li>
+            );
+          })}
+        </ul>
+      )}
     </header>
   );
 }

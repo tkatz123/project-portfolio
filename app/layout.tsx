@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Archivo, Hanken_Grotesk, JetBrains_Mono } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import { site } from "@/data/content";
 import "./globals.css";
 
@@ -62,6 +63,7 @@ export default function RootLayout({
         </noscript>
         <div dangerouslySetInnerHTML={{ __html: `<!--${directionContract}-->` }} hidden />
         {children}
+        <Analytics />
       </body>
     </html>
   );
